@@ -1,11 +1,5 @@
-import React from 'react';
+import React from 'react'
 
 export const App = () => {
-  return (
-    <div>
-      App wrapper
-    </div>
-  );
+  return <div kek={asd}>App wrapper</div>
 }
-
-export default App;
