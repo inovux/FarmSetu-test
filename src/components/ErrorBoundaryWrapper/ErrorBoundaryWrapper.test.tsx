@@ -9,7 +9,7 @@ const DontThrowError = () => {
   return <div data-testid="noErrorBoundary">I am a div</div>
 }
 
-describe('ErrorBoundaryWrapper', () => {
+describe('ErrorBoundaryWrapper component', () => {
   beforeEach(() => {
     jest.spyOn(console, 'error').mockImplementation(() => {})
   })
