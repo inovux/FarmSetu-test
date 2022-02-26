@@ -7,3 +7,5 @@ namespace NodeJS {
     NODE_ENV: 'development' | 'production' | 'test'
   }
 }
+
+declare module '*.css'
