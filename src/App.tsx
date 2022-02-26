@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from './hooks/useLocation'
 import { ErrorBoundaryWrapper } from './components'
-import { DefaultLayout } from './layouts'
+import { HomePage } from './pages'
 
 export const App = () => {
   const { location, isLoading } = useLocation()
@@ -18,10 +18,7 @@ export const App = () => {
 
   return (
     <ErrorBoundaryWrapper>
-      <DefaultLayout>
-        <div>{process.env.REACT_APP_GOOGLE_MAPS_API_KEY}</div>
-        <div>{process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}</div>
-      </DefaultLayout>
+      <HomePage />
     </ErrorBoundaryWrapper>
   )
 }
