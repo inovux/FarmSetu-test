@@ -48,6 +48,8 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "add": "^2.0.6",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
