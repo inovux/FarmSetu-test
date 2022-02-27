@@ -5,7 +5,7 @@ export const useLocation = () => {
   const [location, setLocation] = useState<
     ILocation | GeolocationPositionError
   >({} as ILocation)
-  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [isLocationLoading, setIsLocationLoading] = useState<boolean>(true)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -14,14 +14,14 @@ export const useLocation = () => {
           lat: value.coords.latitude,
           lng: value.coords.longitude,
         })
-        setIsLoading(false)
+        setIsLocationLoading(false)
       },
       (error) => {
         setLocation(error)
-        setIsLoading(false)
+        setIsLocationLoading(false)
       },
     )
   }, [])
 
-  return { location, isLoading }
+  return { location, isLocationLoading }
 }

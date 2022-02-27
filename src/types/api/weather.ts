@@ -63,3 +63,10 @@ export interface IOneCallWeatherApiResponse {
   current: ICurrentWeather
   daily: IDailyWeather[]
 }
+
+export interface IOneCallWeatherApiParams {
+  units: string
+  exclude: string
+  lon: number
+  lat: number
+}
