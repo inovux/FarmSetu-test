@@ -59,13 +59,13 @@ export const CurrentWeatherWidget: FC<ICurrentWeatherWidget> = ({
           data-testid="currentWeatherWidgetTemperature"
           className={styles.temperature}
         >
-          {Math.round(temperature)}&#8451;
+          {Math.round(temperature)}°C
         </div>
         <div
           data-testid="currentWeatherWidgetFeelsLike"
           className={styles.feelsLike}
         >
-          Feels like {Math.round(feels_like)}&#8451;
+          Feels like {Math.round(feels_like)}°C
         </div>
       </div>
     </div>

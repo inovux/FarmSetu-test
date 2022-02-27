@@ -44,7 +44,7 @@ describe('DailyWeather component', () => {
 
   it('should render the correct temperature', () => {
     const temperature = 20.08
-    const temperatureInCelsius = `${Math.round(temperature)}℃`
+    const temperatureInCelsius = `${Math.round(temperature)}°C`
 
     render(
       <DailyWeather

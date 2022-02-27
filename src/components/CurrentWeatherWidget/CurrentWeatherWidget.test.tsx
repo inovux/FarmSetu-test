@@ -88,7 +88,7 @@ describe('CurrentWeatherWidget component', () => {
 
   it('should show the correct temperature in celsius', () => {
     const temperature = 20.08
-    const temperatureInCelsius = `${Math.round(temperature)}℃`
+    const temperatureInCelsius = `${Math.round(temperature)}°C`
 
     render(
       <CurrentWeatherWidget
@@ -110,7 +110,9 @@ describe('CurrentWeatherWidget component', () => {
 
   it('should show the correct feels like temperature in celsius', () => {
     const feelsLikeTemperature = 20.08
-    const feelsLikeTemperatureInCelsius = `${Math.round(feelsLikeTemperature)}℃`
+    const feelsLikeTemperatureInCelsius = `${Math.round(
+      feelsLikeTemperature,
+    )}°C`
 
     render(
       <CurrentWeatherWidget

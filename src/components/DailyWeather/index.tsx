@@ -30,7 +30,7 @@ export const DailyWeather: FC<IDailyWeather> = ({
         className={styles.icon}
       />
       <div data-testid="dailyWeatherTemperature" className={styles.temperature}>
-        {Math.round(temperature)}&#8451;
+        {Math.round(temperature)}°C
       </div>
     </div>
   )
