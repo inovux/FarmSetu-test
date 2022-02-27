@@ -8,6 +8,7 @@ interface ICurrentWeatherWidget {
   temperature: number
   feels_like: number
   timezone: string
+  date: number
 }
 
 export const CurrentWeatherWidget: FC<ICurrentWeatherWidget> = ({
@@ -16,8 +17,9 @@ export const CurrentWeatherWidget: FC<ICurrentWeatherWidget> = ({
   temperature,
   feels_like,
   timezone,
+  date,
 }) => {
-  const date = new Date().toLocaleDateString('en-us', {
+  const dateString = new Date(date * 1000).toLocaleDateString('en-us', {
     weekday: 'short',
     month: 'short',
     day: 'numeric',
@@ -29,7 +31,7 @@ export const CurrentWeatherWidget: FC<ICurrentWeatherWidget> = ({
     <div data-testid="currentWeatherWidget" className={styles.container}>
       <div className={styles.dateWrapper}>
         <div data-testid="currentWeatherWidgetDate" className={styles.date}>
-          {date}
+          {dateString}
         </div>
         <div
           data-testid="currentWeatherWidgetTimezone"

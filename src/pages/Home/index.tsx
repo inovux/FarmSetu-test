@@ -1,24 +1,30 @@
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import { DefaultLayout } from '../../layouts'
 
 import styles from './HomePage.module.css'
 import { CurrentWeatherWidget } from '../../components/CurrentWeatherWidget'
+import { AppContext } from '../../contexts'
 
 export const HomePage: FC = () => {
+  const {
+    weatherData,
+    weatherData: {
+      current,
+      current: { weather },
+    },
+  } = useContext(AppContext)
+
   return (
     <DefaultLayout>
       <div data-testid="homePage" className={styles.container}>
         <CurrentWeatherWidget
-          iconName="04d"
-          description="broken clouds"
-          temperature={20.08}
-          feels_like={20.18}
-          timezone="Asia/Hong_Kong"
+          iconName={weather[0].icon}
+          description={weather[0].description}
+          temperature={current.temp}
+          feels_like={current.feels_like}
+          timezone={weatherData.timezone}
+          date={current.dt}
         />
-        <div data-testid="weatherInformation">Weather information</div>
-        <div data-testid="googleMaps">Google Maps</div>
-        <div>{process.env.REACT_APP_GOOGLE_MAPS_API_KEY}</div>
-        <div>{process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}</div>
       </div>
     </DefaultLayout>
   )

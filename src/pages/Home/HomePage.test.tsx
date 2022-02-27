@@ -1,9 +1,25 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { HomePage } from './index'
+import { act, renderHook } from '@testing-library/react-hooks'
+import { useReducer } from 'react'
+import { appContextReducer } from '../../reducers'
+import {
+  AppContext,
+  IAppContext,
+  initialAppContext,
+} from '../../contexts/AppContext'
+import { IAppContextActions } from '../../types/actions'
+import { weatherDataExample } from '../../testHelpers'
+import { wait } from '@testing-library/user-event/dist/utils'
+import { AppContextContainer } from '../../components/AppContextContainer'
 
 describe('HomePage component', () => {
   it('should render the home page', () => {
-    render(<HomePage />)
+    render(
+      <AppContext.Provider value={{ weatherData: weatherDataExample } as any}>
+        <HomePage />
+      </AppContext.Provider>,
+    )
 
     const homePageElement = screen.getByTestId('homePage')
 
@@ -11,26 +27,28 @@ describe('HomePage component', () => {
   })
 
   it('should use the default layout', () => {
-    render(<HomePage />)
+    render(
+      <AppContext.Provider value={{ weatherData: weatherDataExample } as any}>
+        <HomePage />
+      </AppContext.Provider>,
+    )
 
     const defaultLayoutElement = screen.getByTestId('defaultLayout')
 
     expect(defaultLayoutElement).toBeInTheDocument()
   })
 
-  it('should render the weather information', () => {
-    render(<HomePage />)
+  it('should render the current weather widget', async () => {
+    render(
+      <AppContext.Provider value={{ weatherData: weatherDataExample } as any}>
+        <HomePage />
+      </AppContext.Provider>,
+    )
 
-    const weatherInformationElement = screen.getByTestId('weatherInformation')
+    const currentWeatherWidgetElement = screen.getByTestId(
+      'currentWeatherWidget',
+    )
 
-    expect(weatherInformationElement).toBeInTheDocument()
-  })
-
-  it('should render the google maps', () => {
-    render(<HomePage />)
-
-    const googleMapsElement = screen.getByTestId('googleMaps')
-
-    expect(googleMapsElement).toBeInTheDocument()
+    expect(currentWeatherWidgetElement).toBeInTheDocument()
   })
 })

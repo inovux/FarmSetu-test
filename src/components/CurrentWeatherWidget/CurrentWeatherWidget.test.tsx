@@ -11,6 +11,7 @@ describe('CurrentWeatherWidget component', () => {
         temperature={20.08}
         feels_like={20.18}
         timezone="Asia/Hong_Kong"
+        date={1645932232}
       />,
     )
 
@@ -29,13 +30,14 @@ describe('CurrentWeatherWidget component', () => {
         temperature={20.08}
         feels_like={20.18}
         timezone="Asia/Hong_Kong"
+        date={1645932232}
       />,
     )
 
     const dateElement = screen.getByTestId('currentWeatherWidgetDate')
 
     expect(dateElement).toHaveTextContent(
-      new Date().toLocaleDateString('en-us', {
+      new Date(1645932232 * 1000).toLocaleDateString('en-us', {
         weekday: 'short',
         month: 'short',
         day: 'numeric',
@@ -53,6 +55,7 @@ describe('CurrentWeatherWidget component', () => {
         temperature={20.08}
         feels_like={20.18}
         timezone={timezone}
+        date={1645932232}
       />,
     )
 
@@ -72,6 +75,7 @@ describe('CurrentWeatherWidget component', () => {
         temperature={20.08}
         feels_like={20.18}
         timezone="Asia/Hong_Kong"
+        date={1645932232}
       />,
     )
 
@@ -92,7 +96,8 @@ describe('CurrentWeatherWidget component', () => {
         description="broken clouds"
         temperature={temperature}
         feels_like={20.18}
-        timezone="'Asia/Hong_Kong'"
+        timezone="Asia/Hong_Kong"
+        date={1645932232}
       />,
     )
 
@@ -113,7 +118,8 @@ describe('CurrentWeatherWidget component', () => {
         description="broken clouds"
         temperature={20.08}
         feels_like={feelsLikeTemperature}
-        timezone="'Asia/Hong_Kong'"
+        timezone="Asia/Hong_Kong"
+        date={1645932232}
       />,
     )
 

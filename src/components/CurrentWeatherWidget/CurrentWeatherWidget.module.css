@@ -45,3 +45,8 @@
     margin-top: 20px;
     font-size: 20px;
 }
+
+.temperatureWrapper {
+    padding: 50px 0 50px 100px;
+    border-left: 1px dashed var(--color-primary);
+}

@@ -19,7 +19,7 @@ export const AppContextContainer: FC = ({ children }) => {
       const data = await getWeatherInformation({
         lat: location.lat,
         lon: location.lng,
-        units: 'metrics',
+        units: 'metric',
         exclude: 'minutely,hourly,alerts',
       })
 
