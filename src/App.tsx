@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ErrorBoundaryWrapper } from './components'
-import { HomePage, PageLoader } from './pages'
+import { HomePage, PageError, PageLoader } from './pages'
 import { AppContext } from './contexts'
 
 export const App = () => {
@@ -11,7 +11,9 @@ export const App = () => {
   }
 
   if (context.locationError) {
-    return <div>Something went wrong please try again later</div>
+    return (
+      <PageError errorMessage="Something went wrong. Please make sure the application has access to your location" />
+    )
   }
 
   return (
