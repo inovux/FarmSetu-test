@@ -24,8 +24,9 @@ describe('PageLoader component', () => {
       'Finding out whether you need an umbrella today...',
       'Downloading the °C and °F symbols...',
       'Designing your weather experience...',
+      'Downloading the clouds...',
       'Just a moment...',
-      'Do you need a Jacket today or this week, let me figure that out...',
+      'Do you need a jacket today or this week, let me figure that out...',
     ]
 
     render(<PageLoader />)

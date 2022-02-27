@@ -20,6 +20,7 @@ export const DailyWeatherWidget: FC<IDailyWeatherWidget> = ({
         {weatherData.map((weather) => {
           return (
             <DailyWeather
+              key={weather.dt}
               date={weather.dt}
               temperature={weather.temp.day}
               iconName={weather.weather[0].icon}
