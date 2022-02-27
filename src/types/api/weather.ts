@@ -51,6 +51,7 @@ export interface IDailyWeather {
   wind_gust: number
   weather: IWeather[]
   clouds: number
+  rain: number
   pop: number
   uvi: number
 }
