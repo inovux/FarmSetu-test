@@ -1,0 +1,19 @@
+.container {
+    padding: calc(var(--paddingBase) * 2) var(--paddingBase);
+    background-color: var(--color-primary);
+    border-radius: var(--radiusBase);
+    margin: var(--marginBase) 0;
+    box-shadow: var(--boxShadow);
+}
+
+.container h2 {
+    font-size: 32px;
+    color: var(--color-secondary);
+    margin-left: 35px;
+    margin-bottom: 40px;
+}
+
+.listContainer {
+    display: flex;
+    justify-content: space-between;
+}

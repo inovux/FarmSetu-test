@@ -4,6 +4,7 @@ import { DefaultLayout } from '../../layouts'
 import styles from './HomePage.module.css'
 import { CurrentWeatherWidget } from '../../components/CurrentWeatherWidget'
 import { AppContext } from '../../contexts'
+import { DailyWeatherWidget } from '../../components/DailyWeatherWidget'
 
 export const HomePage: FC = () => {
   const {
@@ -11,6 +12,7 @@ export const HomePage: FC = () => {
     weatherData: {
       current,
       current: { weather },
+      daily,
     },
   } = useContext(AppContext)
 
@@ -25,6 +27,7 @@ export const HomePage: FC = () => {
           timezone={weatherData.timezone}
           date={current.dt}
         />
+        <DailyWeatherWidget dailyWeather={daily} />
       </div>
     </DefaultLayout>
   )
