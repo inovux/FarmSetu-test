@@ -4,5 +4,5 @@
     width: 100%;
     margin: 0 auto;
     max-width: var(--maxPageWidth);
-    padding: var(--paddingBase);
+    padding: 0 var(--paddingBase);
 }
