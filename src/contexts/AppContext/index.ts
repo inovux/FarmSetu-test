@@ -2,18 +2,17 @@ import { createContext } from 'react'
 import { IOneCallWeatherApiResponse } from '../../types/api/weather'
 import { ILocation } from '../../types/location'
 
-const initialAppContext = {
-  weather: undefined,
-  isLoading: false,
-  setIsLoading: (_isLoading: boolean) => {},
-  location: undefined,
+export const initialAppContext = {
+  isLoading: true,
 }
 
-interface IAppContext {
-  weather?: IOneCallWeatherApiResponse
+export interface IAppContext {
+  weatherData: IOneCallWeatherApiResponse
   isLoading: boolean
-  setIsLoading: (isLoading: boolean) => void
-  location?: ILocation
+  location: ILocation
+  locationError: GeolocationPositionError
 }
 
-export const AppContext = createContext<IAppContext>(initialAppContext)
+export const AppContext = createContext<IAppContext>(
+  initialAppContext as IAppContext,
+)
