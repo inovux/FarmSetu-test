@@ -1,8 +1,8 @@
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0 auto;
     max-width: var(--maxPageWidth);
-    padding: var(--paddingBase);
+    padding: calc(var(--paddingBase) * 3);
 }
