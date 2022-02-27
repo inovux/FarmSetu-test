@@ -1,9 +1,7 @@
-import { AppContextActionCreators } from './index'
 import { IOneCallWeatherApiResponse } from '../types/api/weather'
-import { IAppContextActions } from '../types/actions'
 import { ILocation } from '../types/location'
 
-const weatherDataExample: IOneCallWeatherApiResponse = {
+export const weatherDataExample: IOneCallWeatherApiResponse = {
   lat: 22.3146,
   lon: 114.1909,
   timezone: 'Asia/Hong_Kong',
@@ -75,54 +73,15 @@ const weatherDataExample: IOneCallWeatherApiResponse = {
   ],
 }
 
-const locationExample: ILocation = {
+export const locationExample: ILocation = {
   lat: 22.3145741,
   lng: 114.1908535,
 }
 
-const locationErrorExample: GeolocationPositionError = {
+export const locationErrorExample: GeolocationPositionError = {
   code: 123,
   message: 'User denied Geolocation',
   PERMISSION_DENIED: 123,
   POSITION_UNAVAILABLE: 123,
   TIMEOUT: 123,
 }
-
-describe('App context action creators', () => {
-  it('should return the correct type and payload for setting weatherData', () => {
-    const result = AppContextActionCreators.setWeatherData(weatherDataExample)
-
-    expect(result).toStrictEqual({
-      type: IAppContextActions.SET_WEATHER_DATA,
-      payload: { weatherData: weatherDataExample },
-    })
-  })
-
-  it('should return the correct type and payload for setting location', () => {
-    const result = AppContextActionCreators.setLocation(locationExample)
-
-    expect(result).toStrictEqual({
-      type: IAppContextActions.SET_LOCATION,
-      payload: { location: locationExample },
-    })
-  })
-
-  it('should return the correct type and payload for setting locationError', () => {
-    const result =
-      AppContextActionCreators.setLocationError(locationErrorExample)
-
-    expect(result).toStrictEqual({
-      type: IAppContextActions.SET_LOCATION_ERROR,
-      payload: { locationError: locationErrorExample },
-    })
-  })
-
-  it('should return the correct type and payload for setting isLoading', () => {
-    const result = AppContextActionCreators.setIsLoading(false)
-
-    expect(result).toStrictEqual({
-      type: IAppContextActions.SET_IS_LOADING,
-      payload: { isLoading: false },
-    })
-  })
-})
