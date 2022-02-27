@@ -42,7 +42,7 @@ export const AppContextContainer: FC = ({ children }) => {
         dispatch(AppContextActionCreators.setIsLoading(false))
       })
     }
-  }, [isLocationLoading])
+  }, [location, isLocationLoading])
 
   return (
     <AppContext.Provider
