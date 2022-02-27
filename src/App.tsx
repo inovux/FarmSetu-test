@@ -1,19 +1,19 @@
 import React from 'react'
 import { useLocation } from './hooks/useLocation'
 import { ErrorBoundaryWrapper } from './components'
-import { HomePage } from './pages'
+import { HomePage, PageLoader } from './pages'
 
 export const App = () => {
   const { location, isLoading } = useLocation()
 
   if (isLoading) {
-    return <div>Loading...</div>
+    return <PageLoader />
   }
 
   if ('message' in location) {
     console.log(location.message)
   } else {
-    console.log(location.lng)
+    console.log(location)
   }
 
   return (

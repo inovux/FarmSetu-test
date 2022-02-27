@@ -9,3 +9,4 @@ namespace NodeJS {
 }
 
 declare module '*.css'
+declare module '*.gif'
