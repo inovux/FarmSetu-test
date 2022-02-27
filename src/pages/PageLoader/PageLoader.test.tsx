@@ -18,11 +18,22 @@ describe('PageLoader component', () => {
     expect(pageLoaderElement).toBeInTheDocument()
   })
 
-  it('should render the loading text', () => {
+  it('should render the correct loading text', () => {
+    const loaderTexts = [
+      'Hmmm... Is it a T-shirt day or a hoodie day?',
+      'Finding out whether you need an umbrella today...',
+      'Downloading the °C and °F symbols...',
+      'Designing your weather experience...',
+      'Just a moment...',
+      'Do you need a Jacket today or this week, let me figure that out...',
+    ]
+
     render(<PageLoader />)
 
     const pageLoaderElement = screen.getByTestId('pageLoader')
 
-    expect(pageLoaderElement).toHaveTextContent('Loading...')
+    console.log(pageLoaderElement.textContent)
+
+    expect(loaderTexts).toContain(pageLoaderElement.textContent)
   })
 })
