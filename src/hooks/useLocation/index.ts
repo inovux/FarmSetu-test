@@ -1,9 +1,5 @@
 import { useEffect, useState } from 'react'
-
-interface ILocation {
-  lat: number
-  lng: number
-}
+import { ILocation } from '../../types/location'
 
 export const useLocation = () => {
   const [location, setLocation] = useState<
