@@ -28,10 +28,19 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: 'Fredoka', sans-serif;
-    background: rgb(64,163,192);
-    background: linear-gradient(90deg, rgba(64,163,192,1) 0%, rgba(34,193,195,1) 50%, rgba(95,191,138,1) 100%);
-    background-repeat: no-repeat;
+    background-image: linear-gradient(45deg, rgba(64,163,192,1) 0%, rgba(34,193,195,1) 50%, rgba(95,191,138,1) 100%);
+    background-size: 400%;
+    animation: bg-animation 20s infinite alternate;
     color: white;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
 }
 
 /**
