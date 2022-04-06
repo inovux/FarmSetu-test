@@ -17,3 +17,16 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 768px) {
+    .container h2 {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .listContainer {
+        justify-content: start;
+        flex-wrap: wrap;
+        gap: 40px 0;
+    }
+}
