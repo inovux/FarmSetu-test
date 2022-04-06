@@ -16,7 +16,7 @@ export const DailyWeather: FC<IDailyWeather> = ({
   const dateString = new Date(date * 1000).toLocaleDateString('en-us', {
     weekday: 'short',
   })
-  const iconUrl = `http://openweathermap.org/img/wn/${iconName}@2x.png`
+  const iconUrl = `https://openweathermap.org/img/wn/${iconName}@2x.png`
 
   return (
     <div data-testid="dailyWeather" className={styles.container}>

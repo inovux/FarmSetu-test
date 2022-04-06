@@ -27,7 +27,7 @@ describe('DailyWeather component', () => {
 
   it('should render the correct icon', () => {
     const iconName = '04d'
-    const iconUrl = `http://openweathermap.org/img/wn/${iconName}@2x.png`
+    const iconUrl = `https://openweathermap.org/img/wn/${iconName}@2x.png`
 
     render(
       <DailyWeather

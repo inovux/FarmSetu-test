@@ -66,7 +66,7 @@ describe('CurrentWeatherWidget component', () => {
 
   it('should show the correct weather icon', () => {
     const iconName = '04d'
-    const iconUrl = `http://openweathermap.org/img/wn/${iconName}@4x.png`
+    const iconUrl = `https://openweathermap.org/img/wn/${iconName}@4x.png`
 
     render(
       <CurrentWeatherWidget

@@ -25,7 +25,7 @@ export const CurrentWeatherWidget: FC<ICurrentWeatherWidget> = ({
     day: 'numeric',
   })
 
-  const iconUrl = `http://openweathermap.org/img/wn/${iconName}@4x.png`
+  const iconUrl = `https://openweathermap.org/img/wn/${iconName}@4x.png`
 
   return (
     <div data-testid="currentWeatherWidget" className={styles.container}>
